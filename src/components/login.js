@@ -1,6 +1,5 @@
 import {useState} from 'react'
 import useApi from '../hooks/useApi'
-import {connect, useDispatch} from 'react-redux'
 import {SET_TOKEN} from '../redux/reducers/authReducer'
 
 import '../components/login.css';
@@ -10,11 +9,13 @@ import '../components/login.css';
 
 const Login = (props) =>{
    console.log('>>LOGIN PAGE PROPS ', props)
+    
+   
 
-   const [email, setEmail] =useState('')
+   const [email, setEmail] = useState('')
    const [password, setPassword] = useState ('')
    const api = useApi()
-
+   
    const onLoginBtnClick = () => {
       const postData = {
          email, password,
@@ -37,7 +38,7 @@ const Login = (props) =>{
             }
             props.dispatch(action)
 
-            window.location.href = '/#'
+            alert('başardın')
          }else{
             alert ('')
          }
@@ -78,6 +79,11 @@ const Login = (props) =>{
                           <span>
                              I am not registered<br/>
                             <a href='#/register' >Sign in here</a>
+                          </span>
+                        </div>
+                        <div className='signin' >
+                          <span>
+                            <a href='/' >Home</a>
                           </span>
                         </div>
                     </div>

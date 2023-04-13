@@ -4,7 +4,7 @@ import { HashRouter, Route, Routes } from "react-router-dom";
 
 import Login from "./components/login";
 import Register from "./components/register";
-
+import Home from "./components/home";
 
 
 function App() {
@@ -12,7 +12,8 @@ function App() {
     <div className="App">
      <HashRouter>
         <Routes>
-          <Route index element={<Login />} />
+          <Route index element={<Home />} />
+          <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
         </Routes>
       </HashRouter>

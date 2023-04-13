@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const useApi = () => {
+export default function useApi() {
   const baseApiUrl = "https://api.adoptez1artisan.com/";
 
   axios.defaults.baseURL = baseApiUrl;
@@ -15,4 +15,4 @@ const useApi = () => {
   return axios;
 };
 
-export default useApi;
+
